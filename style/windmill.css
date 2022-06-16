@@ -1,18 +1,40 @@
 .windmill {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  background-color: white;
+  height: 220px;
+  border-radius: 30px;
+}
+
+.scroll-slowdown {
+  animation-name: slowdown;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.scrollable {
     animation-name: spin;
-    animation-duration: 1s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    width: 256px;
-    height: 256px;
 }
 
 @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    
-    100% {
-      transform: rotate(360000000deg);
-    }
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(36000deg);
   }
+    
+}
+
+@keyframes slowdown {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+    
+}

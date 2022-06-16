@@ -5,4 +5,8 @@
     text-decoration-line: none;
     pointer-events: none ;
 }
+
+body {
+    text-align: center !important;
+}
   
