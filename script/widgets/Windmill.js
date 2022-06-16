@@ -18,9 +18,9 @@ export class Windmill {
         let _windmill = document.createElement("div");
         
         _windmill.innerHTML = `
-        <svg
-            width="200px"
-            height="200px"
+        <svg 
+            width="300px"
+            height="300px"
             viewBox="0 0 846.62714 843.4928"
             version="1.1"
             id="svg37"

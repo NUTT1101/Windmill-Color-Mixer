@@ -9,6 +9,7 @@
 
     <!--custom-->
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/shiyuzhi/style.css">
 
     <!--windmill-->
     <link rel="stylesheet" href="./style/windmill.css">
@@ -30,21 +31,28 @@
         <div>
             <header class="d-flex justify-content-center py-3">
               <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Option-One</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Option-Two</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">雙色</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">四色</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">八色</a></li>
               </ul>
             </header>
         </div>
         
-        
 
     
-        <div class="wrapper">
-            <div id="windmill-1" class="windmill"></div>
+        <div class="wrapper p-3 mb-3 mx-3 rounded-5 d-flex justify-content-around">
+            <dino-color-picker class="color-picker"></dino-color-picker>
+            <div id="windmill-1" class="windmill "></div>
+        </div>
+
+        <div class="mb-3">
             <button type="button" class="btn btn-primary" id="scroll-button">轉!/停!</button>
         </div>
         
+        <div class="row mx-3" style="height: 200px;">
+            <a style="background: #192efa;" class="col" href="#"></a>
+            <a style="background: #00Fa46;" class="col" href="#"></a>
+        </div>
 
         <!--
             <div style="right: 0px;transform: rotateY(180deg);" class="windmill">
