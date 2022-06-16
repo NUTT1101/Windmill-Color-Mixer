@@ -36,7 +36,7 @@ function switchPageButtonEvent() {
 
 function scrollButtonEvent() {
     document.querySelector("#scroll-button").addEventListener("click", function () {
-        let windmill =  getWindmillElement();
+        let windmill = getWindmillElement();
 
         if (windmill.getAttribute("class") == undefined || 
                 windmill.getAttribute("class") == "scroll-slowdown" || 
