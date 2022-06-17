@@ -23,12 +23,12 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="region" class="container">
         <div style="text-align: center; font-size: 30px;">
             <a href="." class="title fs-1">Color Project</a>
         </div>
         
-        <div>
+        <div id="nav-region">
             <header class="d-flex justify-content-center py-3">
               <ul class="nav nav-pills">
                 <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">雙色</a></li>
@@ -37,41 +37,18 @@
               </ul>
             </header>
         </div>
-        
-
     
-        <div class="wrapper p-3 mb-3 mx-3 rounded-5 d-flex justify-content-around">
+        <div id="display-region" class="wrapper p-3 mb-3 mx-3 rounded-5 d-flex justify-content-around">
             <dino-color-picker class="color-picker"></dino-color-picker>
             <div id="windmill-1" class="windmill "></div>
         </div>
 
-        <div class="mb-3">
+        <div id="button-region" class="mb-3">
             <button type="button" class="btn btn-primary" id="scroll-button">轉!/停!</button>
         </div>
         
-        <div class="row mx-3" style="height: 200px;">
-            <a style="background: #192efa;" class="col" href="#"></a>
-            <a style="background: #00Fa46;" class="col" href="#"></a>
-        </div>
+        <div id="color-region" class="row mx-3" style="height: 200px;"></div>
 
-        <!--
-            <div style="right: 0px;transform: rotateY(180deg);" class="windmill">
-            <div class="wrapper">
-                <div style="background: #FF0000;" class="rect first-blade"></div>
-                <div style="background: #FF0000;" class="rect second-blade"></div>
-                <div style="background: #FF0000;" class="rect third-blade"></div>
-                <div style="background: #FF0000;" class="rect fourth-blade"></div>
-            </div>
-        </div>
-        -->
-    
-        
-        <!--
-            <div>
-            <dino-color-picker><dino-color-picker>
-            <dino-color-picker value="#FF55A7"><dino-color-picker>
-            </div>
-        -->
     </div>
     
 

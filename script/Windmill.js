@@ -6,9 +6,9 @@ export class Windmill {
      * @param {bool} scrollAble 
      */
     constructor(colorSet, scrollAble) {
-        this.colorSet = colorSet;
         this.windmill = this.createWindmill();
-        this.setColors();
+        this.setColors = colorSet;
+        
         if (scrollAble) {
             this.windmill.firstElementChild.setAttribute("class", "scrollable");
         }
@@ -81,10 +81,18 @@ export class Windmill {
         return _windmill;
     }
 
-    setColors() {
-        let colors = this.colorSet.colors;
+
+    /**
+     * 
+     * @param {ColorSet} colorSet 
+     */
+    set setColors(colorSet) {
+        this.colorSet = colorSet;
+        
+        let colors = colorSet.colors;
 
         let paths = this.windmill.getElementsByTagName("path");
+
         switch (colors.length) {
             case 2:
                 for (let i=0; i < paths.length; i++) {
@@ -113,10 +121,13 @@ export class Windmill {
             default:
                 break;
         }
-        
     }
 
-    getWindmill() {
+    get getColorSet() {
+        return this.colorSet;
+    }
+
+    get getWindmill() {
         return this.windmill;
     }
 }
