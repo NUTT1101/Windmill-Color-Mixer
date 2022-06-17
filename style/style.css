@@ -15,12 +15,6 @@ body {
     background-color: aliceblue;
 }
 
-.color-picker {
-       
-}
-
-
-
 @media (max-width: 1000px) {
     .color-picker {
         display: none;

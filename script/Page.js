@@ -31,13 +31,12 @@ export class Page {
             ColorRegion.setBlockColor(ColorRegion.geClickedtBlock, picker.value);
 
             let region = Page.colorRegion;
-            let colors = [];
 
-            Array.from(region.children).forEach(e => {
-                colors.push(e.style.backgroundColor);
-            });
-
-            Page.windmill.setColors = new ColorSet(colors);
+            Page.windmill.setColors = new ColorSet(
+                Array.from(region.children).map(e => {
+                    return e.style.backgroundColor;
+                })
+            );
             
             Page.updateWindmill();
         });
@@ -115,9 +114,9 @@ export class Page {
 
     static updateWindmill() {
         let windmill = document.getElementsByClassName("windmill");
-    
-        for (let i=0; i < windmill.length; i++) {
-            windmill[i].innerHTML = Page.windmill.getWindmill.innerHTML;
-        }
+        
+        Array.from(windmill).forEach(e => {
+            e.innerHTML = Page.windmill.getWindmill.innerHTML; 
+        });
     }
 }
