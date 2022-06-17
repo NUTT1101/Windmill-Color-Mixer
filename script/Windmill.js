@@ -123,7 +123,7 @@ export class Windmill {
         }
     }
 
-    get getColorSet() {
+    get getColorSet () {
         return this.colorSet;
     }
 

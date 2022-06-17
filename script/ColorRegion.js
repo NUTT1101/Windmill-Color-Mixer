@@ -4,10 +4,12 @@ import { Page } from "./Page.js"
 
 export class ColorRegion {
 
-    static currentStatus;
+    static currentPage;
+    static clickedBlock;
 
     static init() {
-        ColorProject.currentStatus = 2;
+        ColorRegion.currentPage = 2;
+        ColorRegion.clickedBlock = 0;
         this.update(2);
     }
     
@@ -32,7 +34,9 @@ export class ColorRegion {
         };
 
         ColorRegion.currentStatus = index;
+        ColorRegion.clickedBlock = 0;
         Page.updateWindmill();
+        Page.colorPicker.value = ColorRegion.getDefaultColors(index).colors[0];
     }
 
     /**
@@ -41,7 +45,7 @@ export class ColorRegion {
      */
     static spawnColorRegion(index) {
         let region = this.getColorRegion();
-        region.innerHTML = "";
+        region.innerHTML = ""; // clear the blocks
 
         if (Page.windmill.getColorSet.colors.length != index) {
             Page.windmill.setColors= this.getDefaultColors(index);
@@ -50,14 +54,46 @@ export class ColorRegion {
         let color = Page.windmill.getColorSet.colors;
 
         for (let i=0; i < index; i++) {
-            let node = document.createElement("a");
+            let colorBlock = document.createElement("a");
+            ColorRegion.setBlockAttribute(colorBlock, i);
+            ColorRegion.addBlockEvent(colorBlock, color[i], i);
+            ColorRegion.setBlockColor(colorBlock, color[i]);
+            region.appendChild(colorBlock);    
+        }           
+    }
 
-            node.setAttribute("class", "col");
+    /**
+     * 
+     * @param {Element} colorBlock 
+     * @param {String} color 
+     */
+    static setBlockColor(colorBlock, color) {
+        colorBlock.style = `background: ${color}`;
+    }
 
-            node.style = "background: " + color[i];
-            region.appendChild(node);    
-        }
-                
+    /**
+     * 
+     * @param {Element} colorBlock 
+     * @param {String} color 
+     * @param {Integer} tag 
+     */
+    static addBlockEvent(colorBlock, color, tag) {
+        colorBlock.addEventListener("click", function () {
+            ColorRegion.clickedBlock = tag;
+            Page.colorPicker.value = color; 
+        });
+    }
+
+
+    /**
+     * 
+     * @param {Element} colorBlock 
+     * @param {Integer} tag 
+     */
+    static setBlockAttribute(colorBlock, tag) {
+        colorBlock.setAttribute("class", "col");
+        colorBlock.setAttribute("id", `block-${tag}`);
+        colorBlock.setAttribute("href", "#");
     }
 
     /**
@@ -85,4 +121,7 @@ export class ColorRegion {
         return document.querySelector("#color-region");
     }
     
+    static get geClickedtBlock() {
+        return document.querySelector(`#block-${ColorRegion.clickedBlock}`);
+    }
 }

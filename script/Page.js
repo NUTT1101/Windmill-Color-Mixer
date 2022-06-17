@@ -1,20 +1,46 @@
 import { ColorProject } from "./ColorProject.js"
 import { Windmill } from "./Windmill.js"
 import { ColorRegion } from "./ColorRegion.js"
+import { ColorSet } from "./ColorSet.js";
 
 export class Page {
     static windmill;
 
     static init() {
         Page.setBackGroundColor();
-        
         Page.switchPageButtonEvent();
         Page.scrollButtonEvent();
-        
-        Page.spawnWindmill();
+        Page.createWindmill();
 
         ColorRegion.init();
-        this.windmill.getWindmill;
+        
+        Page.addPickerChangeEvent()
+    }
+
+    static get colorPicker() {
+        return document.querySelector('dino-color-picker');
+    } 
+
+    static get colorRegion() {
+        return document.querySelector("#color-region");
+    }
+
+    static addPickerChangeEvent() {
+        const picker = Page.colorPicker;
+        picker.addEventListener('change', () => {
+            ColorRegion.setBlockColor(ColorRegion.geClickedtBlock, picker.value);
+
+            let region = Page.colorRegion;
+            let colors = [];
+
+            Array.from(region.children).forEach(e => {
+                colors.push(e.style.backgroundColor);
+            });
+
+            Page.windmill.setColors = new ColorSet(colors);
+            
+            Page.updateWindmill();
+        });
     }
 
     static setBackGroundColor() {
@@ -36,32 +62,30 @@ export class Page {
                             }
                         }
                     }
-    
-                    let reg;
-                    switch (i) {
-                        case 0:
-                            reg = 2
-                            break;
-                        case 1:
-                            reg = 4;
-                            break;
-                        case 2:
-                            reg = 8;
-                            break;
-                        default:
-                            reg = 2;
-                            break;
-                    }
-    
-                    ColorRegion.update(reg);
+
+                    let region = Page.getWhichRegion(i);
+                    ColorRegion.update(region);
                 }
             });
         }
     }
 
+    static getWhichRegion(index) {
+        switch (index) {
+            case 0:
+                return 2;
+            case 1:
+                return 4;
+            case 2:
+                return 8;
+            default:
+                return 2;
+        }
+    }
+
     static scrollButtonEvent() {
         document.querySelector("#scroll-button").addEventListener("click", function () {
-            let windmill = Page.getWindmillElement();
+            let windmill = Page.windmillElement;
     
             if (windmill.getAttribute("class") == undefined || 
                     windmill.getAttribute("class") == "scroll-slowdown" || 
@@ -76,16 +100,16 @@ export class Page {
         });
     }
 
-    static spawnWindmill() {
+    static createWindmill() {
         Page.windmill = new Windmill(
             ColorProject.defaulTwoColors,
-            false
+            false,
         );
         
         this.updateWindmill();
     }
 
-    static getWindmillElement() {
+    static get windmillElement() {
         return document.querySelector("#svg37");
     }
 
