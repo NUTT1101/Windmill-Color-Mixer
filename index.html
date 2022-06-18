@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Color Project</title>
+
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
     <!--custom-->
     <link rel="stylesheet" href="./style/style.css">
@@ -24,7 +27,8 @@
 
 <body>
     <div id="region" class="container">
-        <h1 style="text-align: center;">
+        <h1 style="text-align: center;" class="align-middle">
+            <img style="position:relative;top: -4px;" width="32px" src="./image/icon.svg" alt="">
             <a href="." id="title" class="title"></a>
         </h1>
         
@@ -40,12 +44,14 @@
     
         <div id="display-region" class="wrapper p-3 mb-3 mx-3 rounded-5 d-flex justify-content-around">
             <dino-color-picker class="color-picker"></dino-color-picker>
-            <div id="windmill-1" class="windmill "></div>
+            <div id="windmill-1" class="windmill"></div>
         </div>
 
         <div id="button-region" class="mb-3">
             <button type="button" class="s-button" id="scroll-button">轉/停</button>
             <button type="button" class="s-button" id="reset-button">重 置</button>
+            <button type="button" class="s-button" id="result-button" data-toggle="modal" data-target="#info-modal">結 果</button>
+            <button type="button" class="s-button" id="about-button">關 於</button>
         </div>
         
         <div id="color-region" class="row mx-3" style="height: 200px;"></div>
@@ -56,11 +62,29 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">調色盤</h5>
+                    <h5 class="modal-title" id="">調色盤</h5>
                 </div>
 
                 <div class="modal-body">
                     <dino-color-picker></dino-color-picker>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="s-button" data-dismiss="modal">關 閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="info-modal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                </div>
+
+                <div class="modal-body">
+                    <div id="content-result">沒東西啦</div>
                 </div>
 
                 <div class="modal-footer">

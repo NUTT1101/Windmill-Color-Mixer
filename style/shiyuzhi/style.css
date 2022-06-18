@@ -3,7 +3,7 @@
   display: inline-block;
   font-weight: 550;
   padding: 12px 24px;
-  margin-right: 10px;
+  margin: 10px;
   color: #fff;
   text-decoration: none;
   font-size: 16px;
@@ -20,7 +20,7 @@
 .s-button:hover {
     opacity: 0.85;
     background: linear-gradient(148deg, #F28500 , #fac05e);
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 

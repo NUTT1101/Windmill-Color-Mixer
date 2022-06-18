@@ -36,7 +36,7 @@ export class ColorRegion {
         ColorRegion.currentPage = index;
         ColorRegion.clickedBlock = 0;
         Page.globalWindmillUpdate();
-        Page.colorPicker.value = ColorRegion.getDefaultColors(index).colors[0];
+        Page.colorPicker.value = ColorRegion.getDefaultColors(index).colors[0];         
     }
 
     /**
@@ -56,7 +56,7 @@ export class ColorRegion {
         for (let i=0; i < index; i++) {
             let colorBlock = document.createElement("a");
             ColorRegion.setBlockAttribute(colorBlock , i);
-            ColorRegion.addBlockEvent(colorBlock, color[i], i);
+            ColorRegion.addBlockEvent(colorBlock, i);
             ColorRegion.setBlockColor(colorBlock, color[i]);
             region.appendChild(colorBlock);    
         }           
@@ -77,7 +77,7 @@ export class ColorRegion {
      * @param {String} color 
      * @param {Integer} tag 
      */
-    static addBlockEvent(colorBlock, color, tag) {
+    static addBlockEvent(colorBlock, tag) {
         colorBlock.addEventListener("click", function () {
             if (window.screen.width < 1000) {
                 colorBlock.setAttribute("data-toggle", "modal");
@@ -88,7 +88,7 @@ export class ColorRegion {
             }
 
             ColorRegion.clickedBlock = tag;
-            Page.colorPicker.value = color;
+            Page.colorPicker.value = Page.windmill.getColorSet.colors[tag];
         });
     }
 

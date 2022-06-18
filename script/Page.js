@@ -162,4 +162,12 @@ export class Page {
             e.innerHTML = Page.windmill.getWindmill.innerHTML; 
         });
     }
+
+    static get infoBarContent() {
+        return document.querySelector("#content-result");
+    }
+
+    static get infoBarTitle() {
+        return document.querySelector("#modal-title");
+    }
 }
