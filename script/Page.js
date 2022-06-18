@@ -7,18 +7,35 @@ export class Page {
     static windmill;
 
     static init() {
+        // text
+        Page.title();
+
+        // style
         Page.setBackGroundColor();
-        Page.switchPageButtonEvent();
-        Page.scrollButtonEvent();
         Page.createWindmill();
 
+        // events
+        Page.switchPageButtonEvent();
+        Page.scrollButtonEvent();
+        Page.resetButtonEvent();
+        Page.addPickerChangeEvent();
+
+        // color region
         ColorRegion.init();
         
-        Page.addPickerChangeEvent()
+        // color picker
+        
+    }
+
+    static title() {
+        document.title = ColorProject.projectName;
+        document.querySelector("#title").textContent = ColorProject.projectName;
     }
 
     static get colorPicker() {
-        return document.querySelector('dino-color-picker');
+        return window.screen.width < 1000 ?
+         document.querySelectorAll('dino-color-picker')[1] :
+         document.querySelectorAll('dino-color-picker')[0] ;
     } 
 
     static get colorRegion() {
@@ -38,7 +55,7 @@ export class Page {
                 })
             );
             
-            Page.updateWindmill();
+            Page.localWindmillUpdate();
         });
     }
 
@@ -95,24 +112,50 @@ export class Page {
             } else {
                 windmill.setAttribute("class", "");
             }
-    
+            
+        });
+    }
+
+    static resetButtonEvent() {
+        document.querySelector("#reset-button").addEventListener("click", function () {
+            switch (ColorRegion.currentPage) {
+                case 2:
+                    Page.windmill.setColors = ColorProject.defaultTwoColors;
+                    break;
+                case 4:
+                    Page.windmill.setColors = ColorProject.defaultFourColors;
+                    break;
+                case 8:
+                    Page.windmill.setColors = ColorProject.defaultEightColors;
+                    break;
+            }
+
+            ColorRegion.update(ColorRegion.currentPage);
         });
     }
 
     static createWindmill() {
         Page.windmill = new Windmill(
-            ColorProject.defaulTwoColors,
+            ColorProject.defaultTwoColors,
             false,
         );
         
-        this.updateWindmill();
+        this.globalWindmillUpdate();
     }
 
     static get windmillElement() {
         return document.querySelector("#svg37");
     }
 
-    static updateWindmill() {
+    static localWindmillUpdate() {
+        let blades = document.getElementsByTagName("path");
+        
+        for (let i=0; i < blades.length; i++) {
+            blades[i].style.fill = Page.windmill.blades[i].style.fill;
+        }
+    }
+
+    static globalWindmillUpdate() {
         let windmill = document.getElementsByClassName("windmill");
         
         Array.from(windmill).forEach(e => {

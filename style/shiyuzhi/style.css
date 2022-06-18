@@ -1,47 +1,29 @@
 .s-button{
   position: relative;
   display: inline-block;
-  padding: 12px 36px;
-  margin: 10px 0;
+  font-weight: 550;
+  padding: 12px 24px;
+  margin-right: 10px;
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 2px;
-  border-radius: 40px;
+  border: none;
+  border-radius: 15px;
   overflow: hidden;
-  background: linear-gradient(90deg,#0162c8,#55e7fc);
+  background: linear-gradient(148deg, #fac05e, #F28500);
+  opacity: 1;
+  transition: 0.3s;
+  width: 100px;
 }
 
-.s-button:hover{
-   cursor:pointer;
-   color: #0b0502;
+.s-button:hover {
+    opacity: 0.85;
+    background: linear-gradient(148deg, #F28500 , #fac05e);
+    border-radius: 10px;
 }
 
-.s-button:nth-child(2)
-{
-    background:linear-gradient(90deg,#775bea,#ff72c0);
-}
 
-.s-button:nth-child(3)
-{
-    background:linear-gradient(90deg,#f15d19,#ff72ef);
-}
-
-.s-button:nth-child(4)
-{
-    background:linear-gradient(90deg,#daea7a,#ed6306dd);
-}
-
-.s-button:nth-child(5)
-{
-    background:linear-gradient(90deg,#e355ac,#dfc354e8);
-}
-
-.s-button:nth-child(6)
-{
-    background:linear-gradient(90deg,#e79b68,#e05021e8);
-}
 
 
 

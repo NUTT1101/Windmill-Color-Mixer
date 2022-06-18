@@ -10,9 +10,29 @@ body {
     text-align: center !important;
 }
 
+.nav > li > .active {
+    color: white !important;
+    background: linear-gradient(148deg, #fac05e, #F28500) !important;
+    transition: 0.3s;
+}
+
+.nav > li > .active:hover {
+    color: white !important;
+    border-radius: 10px;
+    background: linear-gradient(148deg,#F28500, #fac05e) !important;
+}
+
+.nav > li > a {
+    color: black !important;
+    font-weight: 550 !important;
+}
+
+.nav > li > a:hover {
+    color: rgb(87, 80, 80) !important;
+}
 
 .wrapper {
-    background-color: aliceblue;
+    background-color: white;
 }
 
 @media (max-width: 1000px) {

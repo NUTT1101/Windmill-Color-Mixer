@@ -33,9 +33,9 @@ export class ColorRegion {
                 break;
         };
 
-        ColorRegion.currentStatus = index;
+        ColorRegion.currentPage = index;
         ColorRegion.clickedBlock = 0;
-        Page.updateWindmill();
+        Page.globalWindmillUpdate();
         Page.colorPicker.value = ColorRegion.getDefaultColors(index).colors[0];
     }
 
@@ -55,7 +55,7 @@ export class ColorRegion {
 
         for (let i=0; i < index; i++) {
             let colorBlock = document.createElement("a");
-            ColorRegion.setBlockAttribute(colorBlock, i);
+            ColorRegion.setBlockAttribute(colorBlock , i);
             ColorRegion.addBlockEvent(colorBlock, color[i], i);
             ColorRegion.setBlockColor(colorBlock, color[i]);
             region.appendChild(colorBlock);    
@@ -64,11 +64,11 @@ export class ColorRegion {
 
     /**
      * 
-     * @param {Element} colorBlock 
+     * @param {HTMLAnchorElement } colorBlock 
      * @param {String} color 
      */
     static setBlockColor(colorBlock, color) {
-        colorBlock.style = `background: ${color}`;
+        colorBlock.style.background = color;
     }
 
     /**
@@ -79,8 +79,16 @@ export class ColorRegion {
      */
     static addBlockEvent(colorBlock, color, tag) {
         colorBlock.addEventListener("click", function () {
+            if (window.screen.width < 1000) {
+                colorBlock.setAttribute("data-toggle", "modal");
+                colorBlock.setAttribute("data-target", "#color-picker-modal");
+            } else {
+                colorBlock.setAttribute("data-toggle", "");
+                colorBlock.setAttribute("data-target", "");
+            }
+
             ColorRegion.clickedBlock = tag;
-            Page.colorPicker.value = color; 
+            Page.colorPicker.value = color;
         });
     }
 
@@ -90,7 +98,7 @@ export class ColorRegion {
      * @param {Element} colorBlock 
      * @param {Integer} tag 
      */
-    static setBlockAttribute(colorBlock, tag) {
+    static setBlockAttribute(colorBlock , tag) {
         colorBlock.setAttribute("class", "col");
         colorBlock.setAttribute("id", `block-${tag}`);
         colorBlock.setAttribute("href", "#");
@@ -104,13 +112,13 @@ export class ColorRegion {
     static getDefaultColors(index) {
         switch (index) {
             case 2:
-                return ColorProject.defaulTwoColors;
+                return ColorProject.defaultTwoColors;
             case 4:
-                return ColorProject.defaulFourColors;
+                return ColorProject.defaultFourColors;
             case 8:
-                return ColorProject.defaulEightColors;
+                return ColorProject.defaultEightColors;
         }                
-        return ColorProject.defaulTwoColors;
+        return ColorProject.defaultTwoColors;
     }
     
     /**

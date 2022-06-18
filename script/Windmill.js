@@ -19,8 +19,8 @@ export class Windmill {
         
         _windmill.innerHTML = `
         <svg 
-            width="300px"
-            height="300px"
+            width="256px"
+            height="256px"
             viewBox="0 0 846.62714 843.4928"
             version="1.1"
             id="svg37"
@@ -121,6 +121,10 @@ export class Windmill {
             default:
                 break;
         }
+    }
+
+    get blades() {
+        return this.windmill.getElementsByTagName("path");
     }
 
     get getColorSet () {
