@@ -14,3 +14,8 @@
 - JavaScirpt
 - 套件:
     - [Every-Color-Picker](https://everycolorpicker.com/)
+
+預覽:
+
+![](./image/perview-pc.png)
+![](./image/perview-phone.png)

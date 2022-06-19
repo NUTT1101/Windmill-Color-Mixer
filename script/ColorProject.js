@@ -19,7 +19,7 @@ export class ColorProject {
     static themeColor = "#fac05e"; // #F28500
     static periwinkle = "#6869ac";
     
-    static defaultTwoColors = new ColorSet(Array.of("#8282F1", "#BEBEE6"));
+    static defaultTwoColors = new ColorSet(Array.of("#8282FA", "#BEBEE6"));
     static defaultFourColors = new ColorSet(Array.of("#192efa", "#00Fa46", "#fa191b", "#fac60a",));
     static defaultEightColors = new ColorSet(Array.of(
     "#192efa", "#00Fa46", "#fa191b", "#fac60a", 
