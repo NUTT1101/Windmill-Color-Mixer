@@ -8,7 +8,7 @@
     
     <title>Color Project</title>
 
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./image/header/favicon.ico">
 
     <!--custom-->
     <link rel="stylesheet" href="./style/style.css">
@@ -17,19 +17,20 @@
     <!--windmill-->
     <link rel="stylesheet" href="./style/windmill.css">
 
-    <!--color picker-->
-
     <!--boostrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
 
+    
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&amp;display=swap">
 </head>
 
 <body>
     <div id="region" class="container">
-        <h1 style="text-align: center;" class="align-middle">
-            <img style="position:relative;top: -4px;" width="32px" src="./image/icon.svg" alt="">
-            <a href="." id="title" class="title"></a>
+        <h1 class="text-center">
+            <img style="position:relative;top: -4.5px;" width="40px" src="./image/header/icon.svg" alt="">
+            <a href="." id="title" class="title fs-1"></a>
         </h1>
         
         <div id="nav-region">
@@ -42,31 +43,32 @@
             </header>
         </div>
     
-        <div id="display-region" class="wrapper p-3 mb-3 mx-3 rounded-5 d-flex justify-content-around">
-            <dino-color-picker class="color-picker"></dino-color-picker>
+        <div id="display-region" class="wrapper p-3 mb-3 rounded-4 d-flex justify-content-around">
+            <shop-color-picker class="color-picker"></shop-color-picker>
             <div id="windmill-1" class="windmill"></div>
         </div>
 
-        <div id="button-region" class="mb-3">
+        <div id="button-region" class="mb-3 text-center">
             <button type="button" class="s-button" id="scroll-button">轉/停</button>
             <button type="button" class="s-button" id="reset-button">重 置</button>
             <button type="button" class="s-button" id="result-button" data-toggle="modal" data-target="#info-modal">結 果</button>
-            <button type="button" class="s-button" id="about-button">關 於</button>
+            <button type="button" class="s-button" id="about-button" data-toggle="modal" data-target="#info-modal">關 於</button>
         </div>
         
-        <div id="color-region" class="row mx-3" style="height: 200px;"></div>
+        <div id="color-region" class="row"></div>
 
+        <div id="footer" class="text-center mt-4"></div>
     </div>
 
     <div class="modal fade" id="color-picker-modal" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="">調色盤</h5>
+                    <h5 class="modal-title">調色盤</h5>
                 </div>
 
                 <div class="modal-body">
-                    <dino-color-picker></dino-color-picker>
+                    <shop-color-picker></shop-color-picker>
                 </div>
 
                 <div class="modal-footer">
@@ -84,7 +86,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <div id="content-result">沒東西啦</div>
+                    <div id="content-result"></div>
                 </div>
 
                 <div class="modal-footer">
@@ -94,7 +96,7 @@
         </div>
     </div>
     
-    <script type="module" src="https://unpkg.com/dino-color-picker"></script>
+    <script type="module" src="https://unpkg.com/shop-color-picker"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./script/script.js" type="module"></script>

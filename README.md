@@ -1,9 +1,16 @@
-# ColorPoject
+# Windmill-Color-Mixer
 
-資工 x 傳藝
+### 運算思維 - 傳藝 x 資工
 
-主旨
+*** 
+#### 主旨: `使用者可透過不同模式的配色設定，調整風車葉片的顏色，並藉由視覺暫留的原理達成顏色混和的效果。`
+#### 連結: [Windmill-Color-Mixer](https://cnutt.me/windmill-color-mixer)
+****
 
-設計理念: 
-
-`有別於以往人們對於混色的認知，藉由科學原理－視覺暫留，藉視覺暫留的殘像作用，讓使用者透過不同的方式了解其混色效果，採用互動式網頁，設置了三種不同的模式，讓使用者能夠根據自身選擇做出調整及設定；利用色彩學中，色彩迴轉混色，藉視覺暫留的原理達到色彩混合之效果，迴轉混色是指在圓形轉盤上貼上兩種或兩種以上的色紙，經快速迴轉後，其顏色所產生之混和現象。`
+使用技術:
+- HTML
+- CSS
+    - [Bootstrap](https://getbootstrap.com/)
+- JavaScirpt
+- 套件:
+    - [Every-Color-Picker](https://everycolorpicker.com/)

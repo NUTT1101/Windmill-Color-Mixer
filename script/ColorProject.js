@@ -1,11 +1,24 @@
 import { ColorSet } from "./ColorSet.js";
 
 export class ColorProject {
-    static projectName = "ColorPoject";
+    static projectName = "ColorMixer";
+    static fullProjectName = "Windmill-Color-Mixer";
+    static author = "cocoNUTTree";
+    static githubLink = "https://github.com/NUTT1101/Windmill-Color-Mixer";
+    static startYear = 2022;
+    static copyright = `
+        ${ColorProject.fullProjectName} &copy; ${
+        ColorProject.startYear  
+        } ${
+            new Date().getFullYear() > ColorProject.startYear ? 
+                `~${new Date().getFullYear()}` : 
+                ""
+            } 
+        `;
 
     static themeColor = "#fac05e"; // #F28500
     static periwinkle = "#6869ac";
-    static backgroundColor = "#a6e8fa"
+    
     static defaultTwoColors = new ColorSet(Array.of("#8282F1", "#BEBEE6"));
     static defaultFourColors = new ColorSet(Array.of("#192efa", "#00Fa46", "#fa191b", "#fac60a",));
     static defaultEightColors = new ColorSet(Array.of(

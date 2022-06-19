@@ -5,5 +5,5 @@ window.onload = function () {
 }
 
 window.onresize = function () {
-    Page.addPickerChangeEvent();
+    Page.pickerChangeEvent();
 } 

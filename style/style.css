@@ -1,13 +1,30 @@
 .title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Klee One', cursive;
     letter-spacing: 1px;
     color: black;
     text-decoration-line: none;
     pointer-events: none ;
 }
 
+#footer {
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    pointer-events: none;
+}
+
+#color-region {
+    height: 200px;
+}
+
+html {
+    height: 100% !important;
+}
+
 body {
-    text-align: center !important;
+    background-image: url("../image/background/radiant-gradient.svg") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }
 
 .nav > li > .active {
@@ -38,5 +55,15 @@ body {
 @media (max-width: 1000px) {
     .color-picker {
         display: none;
+    }
+
+    #display-region {
+        margin: 0 auto 0;
+        width: 90% !important;
+    }
+
+    #color-region {
+        margin: 0 auto 0;
+        width: 90%;
     }
 }

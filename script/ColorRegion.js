@@ -75,7 +75,7 @@ export class ColorRegion {
      * 
      * @param {Element} colorBlock 
      * @param {String} color 
-     * @param {Integer} tag 
+     * @param {number} tag 
      */
     static addBlockEvent(colorBlock, tag) {
         colorBlock.addEventListener("click", function () {
