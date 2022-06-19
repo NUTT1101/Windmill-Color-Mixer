@@ -31,7 +31,7 @@ export class Page {
     }
 
     static title() {
-        document.title = ColorProject.projectName;
+        document.title = ColorProject.fullProjectName;
         document.querySelector("#title").textContent = ColorProject.projectName;
     }
 
