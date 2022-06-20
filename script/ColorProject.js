@@ -16,12 +16,25 @@ export class ColorProject {
             } 
         `;
 
-    static themeColor = "#fac05e"; // #F28500
+    static themeColor = "#fac05e";
     static periwinkle = "#6869ac";
     
-    static defaultTwoColors = new ColorSet(Array.of("#8282FA", "#BEBEE6"));
-    static defaultFourColors = new ColorSet(Array.of("#192efa", "#00Fa46", "#fa191b", "#fac60a",));
-    static defaultEightColors = new ColorSet(Array.of(
-    "#192efa", "#00Fa46", "#fa191b", "#fac60a", 
-    "#19e0fa", "#b1fa00", "#bb19fa", "#fa730c"));
+    static defaultTwoColors = new ColorSet(
+        Array.of(
+            "#CC5057", "#007EFF",
+        )
+    );
+    
+    static defaultFourColors = new ColorSet(
+        Array.of(
+            "#192efa", "#00Fa46", "#fa191b", "#fac60a",
+        )
+    );
+
+    static defaultEightColors = new ColorSet(
+        Array.of(
+            "#192efa", "#00Fa46", "#fa191b", "#fac60a", 
+            "#19e0fa", "#b1fa00", "#bb19fa", "#fa730c",
+        )
+    );
 }

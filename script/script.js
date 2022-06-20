@@ -6,4 +6,4 @@ window.onload = function () {
 
 window.onresize = function () {
     Page.pickerChangeEvent();
-} 
+}
