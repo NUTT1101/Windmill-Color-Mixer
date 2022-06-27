@@ -4,7 +4,7 @@
 
 *** 
 #### 主旨: `使用者可透過不同模式的配色設定，調整風車葉片的顏色，並藉由視覺暫留的原理達成顏色混和的效果。`
-#### 連結: [Windmill-Color-Mixer](https://nutt1101.github.io/windmill-color-picker/)
+#### 連結: [Windmill-Color-Mixer](https://windmill.cnutt.me/)
 ****
 
 使用技術:
