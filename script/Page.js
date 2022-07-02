@@ -61,7 +61,7 @@ export class Page {
                 <p><b>傳藝-張維玲</b>: 風車圖案設計、顏色校調、簡報製作。</p>
                 <p><b>資工-陳彥均</b>: 提出網頁介面模型。</p>
                 <p><b>資工-石育芷</b>: 網頁按鈕樣式設計。</p>
-                <p><b>資工-張鋒石</b>: 網頁撰寫。</p>
+                <p><b>資工-NUTT1101</b>: 網頁撰寫。</p>
                 <h5 style='color: red;'>原始碼及技術說明:</h5>
                 <p>GitHub: <a href='${ColorProject.githubLink}'>${ColorProject.fullProjectName}</a></p>`;
      
