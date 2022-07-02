@@ -57,11 +57,11 @@ export class Page {
             content.innerHTML = `<h5 style='color: red;'>主旨 :</h5> 
                 <p>使用者可透過不同模式的配色設定，調整風車葉片的顏色，並藉由視覺暫留的原理達成顏色混和的效果。</p>\
                 <h5 style='color: red;'>協作人員:</h5> 
-                <p><b>傳藝-莊棣蓉</b>: 提出主題概念。</p>
-                <p><b>傳藝-張維玲</b>: 風車圖案設計、顏色校調、簡報製作。</p>
-                <p><b>資工-陳彥均</b>: 提出網頁介面模型。</p>
-                <p><b>資工-石育芷</b>: 網頁按鈕樣式設計。</p>
-                <p><b>資工-NUTT1101</b>: 網頁撰寫。</p>
+                <p><b>傳藝-莊O蓉</b>: 提出主題概念。</p>
+                <p><b>傳藝-張O玲</b>: 風車圖案設計、顏色校調、簡報製作。</p>
+                <p><b>資工-<a href="https://github.com/frank591781">frank591781</a></b>: 提出網頁介面模型。</p>
+                <p><b>資工-<a href="https://github.com/shiyuzhi">shiyuzhi</a></b>: 網頁按鈕樣式設計。</p>
+                <p><b>資工-<a href="https://github.com/NUTT1101">NUTT1101</a></b>: 網頁撰寫。</p>
                 <h5 style='color: red;'>原始碼及技術說明:</h5>
                 <p>GitHub: <a href='${ColorProject.githubLink}'>${ColorProject.fullProjectName}</a></p>`;
      
