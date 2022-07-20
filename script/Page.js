@@ -75,9 +75,9 @@ export class Page {
      */
     static resultButtonEvent() {
         const resultButton = Page.resultButton;
-        Page.dialogTitle.textContent = "混色結果";
         
         resultButton.addEventListener("click", () => {
+            Page.dialogTitle.textContent = "混色結果";
             let colors = Page.windmill.getColorSet.colors;
             let content = Page.colorDialogParent();
 
